@@ -28,7 +28,7 @@ class SchedulePage extends StatelessWidget {
         child: Column(
             children: buses.map((p) {
               if (p.busName != text) {
-                return busDetailCard(p, context);
+                return busCards(p, context);
               }
             }).toList()),
       ),
@@ -63,9 +63,14 @@ class SchedulePage extends StatelessWidget {
   String text = '';
   final String title;
 
-  Widget busDetailCard(ScheduleBus, BuildContext context) {
-    return Padding(
+  Widget busCards(ScheduleBus, BuildContext context) {
+    return Container(
       padding: const EdgeInsets.all(12.0),
+      margin: EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+          color: Colors.white70,
+          borderRadius: BorderRadius.circular(10.0)
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -83,7 +88,7 @@ class SchedulePage extends StatelessWidget {
                     padding: const EdgeInsets.all(12.0),
                     child: Container(
                         width: 120.0,
-                        height: 150.0,
+                        height: 152.0,
                         decoration: new BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: new DecorationImage(
