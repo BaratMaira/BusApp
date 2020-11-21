@@ -3,6 +3,8 @@ class Passengers{
   String seat;
   String status;
   String type;
-
-  Passengers({this.name, this.seat, this.status, this.type});
+  String phone;
+  String email;
+  String price;
+  Passengers({this.name, this.seat, this.status, this.type, this.phone, this.email,this.price});
 }
